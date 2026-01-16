@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - ミライカネ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1a365d;
+      --color-primary-light: #2d4a7c;
+      --color-accent: #3b82f6;
+      --color-accent-light: #60a5fa;
+      --color-text: #1f2937;
+      --color-text-light: #6b7280;
+      --color-bg: #fafbfc;
+      --color-bg-card: #ffffff;
+      --color-border: #e5e7eb;
+      --color-warning: #fef3c7;
+      --color-warning-border: #f59e0b;
+      --color-info: #dbeafe;
+      --color-info-border: #3b82f6;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--color-text);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+      background-attachment: fixed;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 背景装飾 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 54, 93, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--color-bg-card);
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding: 0;
+      border-radius: 16px;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ヘッダー */
+    .header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      padding: 60px 50px 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .header-subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.95);
+      position: relative;
+      z-index: 1;
+      margin-top: 8px;
+    }
+
+    .update-date {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+      z-index: 1;
+    }
+
+    /* ヘッダー内のupdate-dateは常に白色 */
+    .header .update-date {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* メインコンテンツ */
+    .content {
+      padding: 50px;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: var(--color-primary);
+      position: relative;
+      padding-left: 20px;
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: fadeInLeft 0.6s ease-out forwards;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      border-radius: 2px;
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    h2:nth-child(1) { animation-delay: 0.1s; }
+    h2:nth-child(2) { animation-delay: 0.15s; }
+    h2:nth-child(3) { animation-delay: 0.2s; }
+    h2:nth-child(4) { animation-delay: 0.25s; }
+
+    h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--color-text);
+      font-size: 15px;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+      padding-left: 8px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      color: var(--color-text);
+      font-size: 15px;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    ul li::marker {
+      color: var(--color-accent);
+    }
+
+    ol li {
+      padding-left: 8px;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--color-accent-light);
+      border-bottom-color: var(--color-accent-light);
+    }
+
+    /* 重要情報ボックス */
+    .important {
+      background: linear-gradient(135deg, var(--color-warning) 0%, #fef9e7 100%);
+      border-left: 4px solid var(--color-warning-border);
+      padding: 20px 24px;
+      margin: 30px 0;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .important::before {
+      content: '⚠️';
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 24px;
+      opacity: 0.3;
+    }
+
+    .important strong {
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .important p {
+      margin-bottom: 0;
+      color: #78350f;
+    }
+
+    /* 連絡先情報ボックス */
+    .contact-info {
+      background: linear-gradient(135deg, var(--color-info) 0%, #eff6ff 100%);
+      border-left: 4px solid var(--color-info-border);
+      padding: 24px 28px;
+      margin: 30px 0;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .contact-info::before {
+      content: '📧';
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-size: 24px;
+      opacity: 0.3;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+      color: var(--color-primary);
+    }
+
+    .contact-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info strong {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* フッター */
+    .footer {
+      background: var(--color-bg);
+      padding: 40px 50px;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .footer .update-date {
+      position: static;
+      color: var(--color-text-light);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .footer .update-date strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    /* スクロールアニメーション */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .header {
+        padding: 40px 30px 30px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .update-date {
+        position: static;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .content {
+        padding: 30px 24px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-top: 40px;
+        padding-left: 16px;
+      }
+
+      h2::before {
+        width: 3px;
+        height: 24px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-top: 24px;
+      }
+
+      p, li {
+        font-size: 14px;
+      }
+
+      .important,
+      .contact-info {
+        padding: 16px 20px;
+        margin: 24px 0;
+      }
+
+      .footer {
+        padding: 30px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 10px;
+        border-radius: 8px;
+      }
+
+      .header {
+        padding: 30px 20px 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-top: 32px;
+      }
+    }
+
+    /* 印刷用スタイル */
+    @media print {
+      body {
+        background: white;
+      }
+
+      .container {
+        box-shadow: none;
+        margin: 0;
+      }
+
+      .header {
+        background: var(--color-primary);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <p class="update-date">最終更新日：2026年1月16日</p>
+      <h1>プライバシーポリシー</h1>
+      <p class="header-subtitle">ミライカネにおける個人情報の取り扱いについて</p>
+    </div>
+
+    <div class="content">
+      <h2>第1条：事業者の名称および連絡先</h2>
+      <p>本プライバシーポリシー（以下、「本ポリシー」といいます）は、ミライカネ（以下、「本アプリ」といいます）における個人情報の取り扱いについて定めるものです。</p>
+      
+      <div class="contact-info">
+        <p><strong>事業者名（個人情報取扱事業者）</strong>: 富田郁哉</p>
+        <p><strong>アプリ名</strong>: ミライカネ</p>
+        <p><strong>住所</strong>: 〒166-0012 東京都杉並区和田</p>
+        <p><strong>代表者名</strong>: 富田郁哉</p>
+        <p><strong>連絡先</strong>: <a href="mailto:tonahuma77@gmail.com">tonahuma77@gmail.com</a></p>
+      </div>
+
+      <h2>第2条：取得する情報の種類</h2>
+      <p>本アプリは、以下の情報をユーザーのデバイス上のローカルストレージ（SQLiteデータベース）に保存します：</p>
+
+      <h3>2.1 資産情報</h3>
+      <ul>
+        <li>資産名（金融資産、預貯金などの名称）</li>
+        <li>資産の種類（金融資産、預貯金）</li>
+        <li>所有者（本人、配偶者）</li>
+        <li>現在の金額</li>
+        <li>年間利率</li>
+      </ul>
+
+      <h3>2.2 収支情報</h3>
+      <ul>
+        <li>収入・支出の種類</li>
+        <li>月額金額</li>
+        <li>開始年月・終了年月</li>
+        <li>メモ（任意）</li>
+      </ul>
+
+      <h3>2.3 ライフイベント情報</h3>
+      <ul>
+        <li>イベントの種類（住宅購入など）</li>
+        <li>イベント名</li>
+        <li>発生予定年月</li>
+        <li>購入金額、頭金、ローン金額、金利、返済期間、維持費などの詳細情報</li>
+        <li>メモ（任意）</li>
+      </ul>
+
+      <h3>2.4 その他の情報</h3>
+      <ul>
+        <li>アプリの設定情報（テーマ、言語設定など）</li>
+        <li>データの作成日時・更新日時</li>
+      </ul>
+
+      <div class="important">
+        <p><strong>重要な注意事項</strong>: 本アプリは、上記の情報をすべてユーザーのデバイス内のローカルストレージ（SQLiteデータベース）にのみ保存します。これらの情報をインターネットを通じて外部サーバーへ送信することは一切ありません。</p>
+      </div>
+
+      <h2>第3条：情報の取得方法</h2>
+      <p>本アプリが取得する情報は、すべてユーザーがアプリ内で直接入力した情報です。自動的に収集する情報はありません。</p>
+      <ul>
+        <li>ユーザーによる手動入力（資産情報、収支情報、ライフイベント情報の入力）</li>
+        <li>アプリの設定変更（ユーザーによる設定の変更）</li>
+      </ul>
+      
+      <p>本アプリは、以下の情報を収集・送信しません：</p>
+      <ul>
+        <li>位置情報</li>
+        <li>連絡先情報</li>
+        <li>カメラ・写真</li>
+        <li>マイク・音声</li>
+        <li>デバイス情報（デバイスID、広告IDなど）</li>
+        <li>使用状況データ</li>
+        <li>クラッシュレポート</li>
+        <li>分析データ</li>
+      </ul>
+
+      <h2>第4条：利用目的</h2>
+      <p>本アプリが取得した情報は、以下の目的でのみ利用します：</p>
+      <ol>
+        <li><strong>アプリ機能の提供</strong>: 資産推移のシミュレーション、ライフイベントの影響計算、グラフ表示などの本アプリの機能を提供するため</li>
+        <li><strong>データの保存</strong>: ユーザーが入力した情報をデバイス内に保存し、次回起動時に表示するため</li>
+        <li><strong>アプリの動作維持</strong>: アプリが正常に動作するための設定情報の保存</li>
+      </ol>
+      <p>本アプリは、上記の目的以外で情報を利用することはありません。</p>
+
+      <h2>第5条：データの保存場所および保存期間</h2>
+      
+      <h3>5.1 保存場所</h3>
+      <p>すべてのデータは、ユーザーのデバイス内のローカルストレージ（SQLiteデータベース）に保存されます。データが外部サーバーやクラウドサービスに送信されることは一切ありません。</p>
+
+      <h3>5.2 保存期間</h3>
+      <ul>
+        <li>データは、ユーザーがアプリをアンインストールするまで、またはユーザーがアプリ内でデータを削除するまで保存されます</li>
+        <li>アプリをアンインストールすると、すべてのデータは自動的に削除されます</li>
+        <li>ユーザーは、アプリ内の機能を使用していつでもデータを削除できます</li>
+      </ul>
+
+      <h3>5.3 データのバックアップ</h3>
+      <p>本アプリは、データの自動バックアップ機能を提供していません。データのバックアップが必要な場合は、ユーザーがデバイスのバックアップ機能を使用してください。</p>
+
+      <h2>第6条：第三者提供</h2>
+      <p>本アプリは、以下の場合を除き、取得した情報を第三者に提供することはありません：</p>
+      <ul>
+        <li>法令に基づく場合</li>
+        <li>ユーザーの生命、身体または財産の保護のために必要であり、本人の同意を得ることが困難な場合</li>
+      </ul>
+      
+      <div class="important">
+        <p><strong>重要な注意事項</strong>: 本アプリは、データ分析サービス、広告配信サービス、その他の外部サービスに情報を送信することは一切ありません。</p>
+      </div>
+
+      <h2>第7条：安全管理措置</h2>
+      <p>本アプリは、データの漏えい、滅失、毀損を防止するため、以下の安全管理措置を講じています：</p>
+      <ol>
+        <li><strong>ローカルストレージの利用</strong>: すべてのデータをデバイス内のローカルストレージに保存し、外部への送信を防止</li>
+        <li><strong>OSレベルの保護</strong>: デバイスのOSが提供するセキュリティ機能（画面ロック、アプリの権限管理など）を利用</li>
+        <li><strong>データベースアクセスの制限</strong>: アプリ内でのみデータベースにアクセス可能</li>
+      </ol>
+      <p>なお、デバイス自体のセキュリティ（画面ロック、アプリの権限設定など）は、ユーザーが管理する必要があります。</p>
+
+      <h2>第8条：ユーザーの権利</h2>
+      <p>ユーザーは、以下の権利を有します：</p>
+      <ol>
+        <li><strong>情報の確認</strong>: アプリ内で保存されている自分の情報を確認する権利</li>
+        <li><strong>情報の訂正</strong>: 不正確な情報を訂正する権利（アプリ内で直接編集可能）</li>
+        <li><strong>情報の削除</strong>: 保存されている情報を削除する権利（アプリ内で直接削除可能、またはアプリをアンインストールすることで全データが削除されます）</li>
+        <li><strong>利用停止</strong>: アプリをアンインストールすることで、すべてのデータ処理を停止する権利</li>
+      </ol>
+      
+      <p>これらの権利を行使する方法：</p>
+      <ul>
+        <li>アプリ内でデータを直接編集・削除する</li>
+        <li>アプリをアンインストールする（すべてのデータが削除されます）</li>
+      </ul>
+
+      <h2>第9条：個人情報の開示請求等</h2>
+      <p>ユーザーは、本アプリが保存している個人情報について、開示、訂正、削除、利用停止を求めることができます。これらの請求は、以下の連絡先までお願いいたします：</p>
+      
+      <div class="contact-info">
+        <p><strong>連絡先</strong>: <a href="mailto:tonahuma77@gmail.com">tonahuma77@gmail.com</a></p>
+      </div>
+      
+      <p>なお、本アプリはすべてのデータをユーザーのデバイス内にのみ保存しているため、ユーザー自身がアプリ内で直接確認・編集・削除することが可能です。</p>
+
+      <h2>第10条：Cookieおよびその他の技術</h2>
+      <p>本アプリは、Cookie、Webビーコン、その他の追跡技術を使用しません。また、本アプリはWebサイトを提供していないため、WebブラウザのCookieは使用しません。</p>
+
+      <h2>第11条：国外移転</h2>
+      <p>本アプリは、すべてのデータをユーザーのデバイス内にのみ保存するため、データを国外に移転することはありません。</p>
+
+      <h2>第12条：プライバシーポリシーの変更</h2>
+      <p>本ポリシーの内容は、法令の変更や本アプリの機能変更に伴い、必要に応じて変更することがあります。重要な変更がある場合は、本ページにて公表し、最終更新日を更新します。</p>
+      <p>変更後のプライバシーポリシーは、本ページに掲載した時点から効力を生じるものとします。</p>
+
+      <h2>第13条：準拠法および管轄</h2>
+      <p>本ポリシーは日本法に準拠します。本アプリに関する紛争については、東京地方裁判所を第一審の専属管轄裁判所とします。</p>
+
+      <h2>第14条：お問い合わせ</h2>
+      <p>本ポリシーに関するご質問や、個人情報の取り扱いに関するご要望は、以下の連絡先までお願いいたします：</p>
+      
+      <div class="contact-info">
+        <p><strong>事業者名</strong>: 富田郁哉</p>
+        <p><strong>連絡先</strong>: <a href="mailto:tonahuma77@gmail.com">tonahuma77@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="update-date"><strong>最終更新日</strong>: 2026年1月16日</p>
+    </div>
+  </div>
+
+  <script>
+    // スクロールアニメーション（オプション）
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('h2, .important, .contact-info').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    }
+  </script>
+</body>
+</html>
